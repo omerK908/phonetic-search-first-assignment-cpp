@@ -6,18 +6,10 @@ using namespace std;
 
 #define SPACE ' '
 #define ENTER '\n'
-#define END '\0'
+#define END '\0' 
 #define TAB '\t'
 #define ASCII 32
 
-/*
-string toLower(string s)
-{
-    // using transform() function and ::tolower in STL 
-    transform(s.begin(), s.end(), s.begin(), ::tolower); 
-    return s;
-}
-*/
 
 namespace phonetic
 {
