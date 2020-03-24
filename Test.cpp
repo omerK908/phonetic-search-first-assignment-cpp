@@ -17,7 +17,7 @@ using namespace std;
 
  /* b, f, p && i,y*/
 TEST_CASE("Test replacement of p and b") {
-    string text = "xxx happy yyy";
+    string text = "   xxx happy yyy";
     CHECK(find(text, "happy") == string("happy"));
     CHECK(find(text, "habby") == string("happy"));
     CHECK(find(text, "hapby") == string("happy"));
@@ -77,7 +77,7 @@ TEST_CASE("Test replacement of g and j"){
     TEST_CASE("Test replacement of g and j"){
     string text = "xxx global yyy";
     CHECK(find(text, "global") == string("global"));
-    CHECK(find(text, "jlobal") == string("gal"));
+    CHECK(find(text, "jlobal") == string("global"));
 
     }
 
