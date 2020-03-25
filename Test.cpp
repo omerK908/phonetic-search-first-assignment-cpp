@@ -202,7 +202,7 @@ TEST_CASE("Test replacement of lower-case and upper-case ") {
 }
 
 TEST_CASE("Test replacement of lower-case and upper-case ") {
-    string text = "Dont xxx yyy";
+    string text = "   Dont   xXx Yyy";
     CHECK(find(text, "dont") == string("Dont"));
     CHECK(find(text, "Dont") == string("Dont"));
     CHECK(find(text, "DOnt") == string("Dont"));
@@ -213,6 +213,27 @@ TEST_CASE("Test replacement of lower-case and upper-case ") {
     CHECK(find(text, "dONT") == string("Dont"));
     CHECK(find(text, "DoNt") == string("Dont"));
     CHECK(find(text, "dOnT") == string("Dont"));
+    CHECK(find(text, "xxx") == string("xXx"));
+    CHECK(find(text, "YYY") == string("Yyy"));
 
 
 }
+/*
+TEST_CASE("Test all cases combined") {
+    string text = " The big Brown fox  \n juMp over the lazy Dog \t";
+    CHECK(find(text, "the") == string("The"));
+    CHECK(find(text, "Dont") == string("Dont"));
+    CHECK(find(text, "DOnt") == string("Dont"));
+    CHECK(find(text, "DONt") == string("Dont"));
+    CHECK(find(text, "DONT") == string("Dont"));
+    CHECK(find(text, "donT") == string("Dont"));
+    CHECK(find(text, "doNT") == string("Dont"));
+    CHECK(find(text, "dONT") == string("Dont"));
+    CHECK(find(text, "DoNt") == string("Dont"));
+    CHECK(find(text, "dOnT") == string("Dont"));
+    CHECK(find(text, "xxx") == string("xXx"));
+    CHECK(find(text, "YYY") == string("Yyy"));
+
+
+}
+*/
