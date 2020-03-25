@@ -13,4 +13,5 @@ namespace phonetic
     bool isSwapable(char a, char b);
     bool sameLetter(char a, char b);
     bool isWord(string str);
+    string removeSpaces(string str);
 }
