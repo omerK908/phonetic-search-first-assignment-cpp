@@ -16,13 +16,13 @@ namespace phonetic
     {
         int textLength = text.size();
         int searchLength = search.size();
-        if(textLength == 0 || searchLength == 0)
+        if(textLength == 0 || searchLength == 0 || !isWord(search))
         {
             /*throw*/
         string ex = "Empty text";
         throw runtime_error(ex);
         }
-
+        
         for(int i = 0; i < textLength; i++)
         {
             if(i == 0)
@@ -123,6 +123,19 @@ namespace phonetic
     {
         if(a < b)return a + ASCII == b;
         return b + ASCII == a;
+    }
+
+    bool isWord(string str)
+    {
+        int length = str.size();
+        for(int i = 0; i < length; i++)
+        {
+            if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

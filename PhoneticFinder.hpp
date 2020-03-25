@@ -12,4 +12,5 @@ namespace phonetic
     bool isEqual(string x, string y);
     bool isSwapable(char a, char b);
     bool sameLetter(char a, char b);
+    bool isWord(string str);
 }
