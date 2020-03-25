@@ -14,6 +14,7 @@ namespace phonetic
 {
     string find(string text, string search)
     {
+        text = removeSpaces(text);
         int textLength = text.size();
         int searchLength = search.size();
         if(textLength == 0 || searchLength == 0 || !isWord(search))
@@ -25,7 +26,7 @@ namespace phonetic
         
         for(int i = 0; i < textLength; i++)
         {
-            if(i == 0)
+            if(i == 0 && text[i] != SPACE)
             {
                 string tmp = getWord(text, i);
                 if(isEqual(tmp, search))
@@ -55,9 +56,9 @@ namespace phonetic
 
     string getWord(string text, int index)
     {
-        int i = index;
+        
         size_t length = text.size();
-        for (; i < length; i++)
+        for (int i = index; i < length; i++)
         {
             if(endOfWord(text, i))
             {
@@ -136,6 +137,14 @@ namespace phonetic
             }
         }
         return false;
+    }
+
+    string removeSpaces(string str)
+    {
+        string ans = str;
+        while(ans[0] == SPACE)ans = ans.substr(1, ans.size() - 1);
+        while(ans[ans.size() - 1] == SPACE)ans = ans.substr(0, ans.size() - 1);
+        return ans;
     }
 }
 
