@@ -202,7 +202,7 @@ TEST_CASE("Test replacement of lower-case and upper-case ") {
 }
 
 TEST_CASE("Test replacement of lower-case and upper-case ") {
-    string text = "   Dont   xXx Yyy";
+    string text = "   Dont  xXx Yyy";
     CHECK(find(text, "dont") == string("Dont"));
     CHECK(find(text, "Dont") == string("Dont"));
     CHECK(find(text, "DOnt") == string("Dont"));
@@ -218,7 +218,7 @@ TEST_CASE("Test replacement of lower-case and upper-case ") {
 
 
 }
-/*
+
 TEST_CASE("Test all cases combined") {
     string text = " The big Brown fox  \n juMp over the lazy Dog \t";
     CHECK(find(text, "the") == string("The"));
@@ -239,32 +239,7 @@ TEST_CASE("Test all cases combined") {
     CHECK(find(text, "YYY") == string("Yyy"));
     CHECK(find(text, "YYY") == string("Yyy"));
 
-} */
-/*
-TEST_CASE("All letter together ") {      // cheking all letter together same word 
-    string text = " xxx vwbpfgjckqszdtouiy yyy";
-    CHECK(find(text, vwbpfgjckqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, Vwbpfgjckqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWbpfgjckqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBpfgjckqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPfgjckqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFgjckqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGjckqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJckqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCkqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKqszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKQszdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKQSzdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKQSZdtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKQSZDtouiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKQSZDTOuiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKQSZDTOUiy) == string("vwbpfgjckqszdtouiy"));
-    CHECK(find(text, VWBPFGJCKQSZDTOUIy) == string("vwbpfgjckqszdtouiy")); 
-    CHECK(find(text, VWBPFGJCKQSZDTOUIY) == string("vwbpfgjckqszdtouiy")); 
-    CHECK(find(text, VwBpFoJcKqSzDtOuIy) == string("vwbpfgjckqszdtouiy")); 
-}*/
-
+} 
 
 TEST_CASE("Test all spaces ") {      /* cheking space begging of line and end of line ( lower && upper case)*/
     string text = " zZz xXx yYy";
@@ -277,6 +252,36 @@ TEST_CASE("Test all spaces ") {      /* cheking space begging of line and end of
     CHECK(find(text, "D ont") == string(" dont"));
     CHECK(find(text, "D ont") == string("dont "));
 }
+
+TEST_CASE("Another test case ") {      /* */
+    string text = " zZz xXx yYy";
+    CHECK(find(text, "Be") == string("be"));
+    CHECK(find(text, "be") == string(" be"));
+    CHECK(find(text, "be") == string("be "));
+    CHECK(find(text, "be") == string("be"));
+    CHECK(find(text, "w orry") == string("worry"));
+    CHECK(find(text, "w orry") == string("worry "));
+    CHECK(find(text, "w orry") == string(" worry"));
+    CHECK(find(text, "W orry") == string("worry"));
+    CHECK(find(text, "W orry") == string(" worry"));
+    CHECK(find(text, "v orry") == string("worry "));
+    CHECK(find(text, "v orry") == string(" worry"));
+    CHECK(find(text, "v orry") == string("worry "));
+    CHECK(find(text, "Happy") == string("Happy"));
+    CHECK(find(text, "H appy") == string("Happy"));
+    CHECK(find(text, "h appy") == string("Happy"));
+    CHECK(find(text, "h appi") == string("Happy"));
+    CHECK(find(text, "H appi") == string("Happy"));
+    CHECK(find(text, "h appi") == string("Happy"));
+    CHECK(find(text, "H appY") == string("Happy"));
+    CHECK(find(text, "h Appy") == string("Happy"));
+    CHECK(find(text, "h APpi") == string("Happy"));
+
+
+
+
+}
+
 
 
 
