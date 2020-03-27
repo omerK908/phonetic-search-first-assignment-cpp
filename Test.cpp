@@ -175,7 +175,6 @@ TEST_CASE("Test replacement of lower-case and upper-case ") {
     CHECK(find(text, "hApPy") == string("Happy"));
     CHECK(find(text, "haPPY") == string("Happy"));
     
-
 }
 
 TEST_CASE("Test replacement of lower-case and upper-case ") {
@@ -216,75 +215,4 @@ TEST_CASE("Test replacement of lower-case and upper-case ") {
     CHECK(find(text, "xxx") == string("xXx"));
     CHECK(find(text, "YYY") == string("Yyy"));
 
-
 }
-
-TEST_CASE("Test all cases combined") {
-    string text = " The big Brown fox  \n juMp over the lazy Dog \t";
-    CHECK(find(text, "the") == string("The"));
-    CHECK(find(text, "Dont") == string("Dont"));
-    CHECK(find(text, "DOnt") == string("Dont"));
-    CHECK(find(text, "DONt") == string("Dont"));
-    CHECK(find(text, "DONT") == string("Dont"));
-    CHECK(find(text, "donT") == string("Dont"));
-    CHECK(find(text, "doNT") == string("Dont"));
-    CHECK(find(text, "dONT") == string("Dont"));
-    CHECK(find(text, "DoNt") == string("Dont"));
-    CHECK(find(text, "dOnT") == string("Dont"));
-    CHECK(find(text, "xxx") == string("xXx"));
-    CHECK(find(text, "YYY") == string("Yyy"));
-    CHECK(find(text, "YYY") == string("Yyy"));
-    CHECK(find(text, "YYY") == string("Yyy"));
-    CHECK(find(text, "YYY") == string("Yyy"));
-    CHECK(find(text, "YYY") == string("Yyy"));
-    CHECK(find(text, "YYY") == string("Yyy"));
-
-} 
-
-TEST_CASE("Test all spaces ") {      /* cheking space begging of line and end of line ( lower && upper case)*/
-    string text = " zZz xXx yYy";
-    CHECK(find(text, "dont") == string(" dont"));
-    CHECK(find(text, "Dont") == string(" dont"));
-    CHECK(find(text, "dont") == string("dont "));
-    CHECK(find(text, "Dont") == string("dont "));
-    CHECK(find(text, "d ont") == string(" dont"));
-    CHECK(find(text, "d ont") == string("dont "));
-    CHECK(find(text, "D ont") == string(" dont"));
-    CHECK(find(text, "D ont") == string("dont "));
-}
-
-TEST_CASE("Another test case ") {      /* */
-    string text = " zZz xXx yYy";
-    CHECK(find(text, "Be") == string("be"));
-    CHECK(find(text, "be") == string(" be"));
-    CHECK(find(text, "be") == string("be "));
-    CHECK(find(text, "be") == string("be"));
-    CHECK(find(text, "w orry") == string("worry"));
-    CHECK(find(text, "w orry") == string("worry "));
-    CHECK(find(text, "w orry") == string(" worry"));
-    CHECK(find(text, "W orry") == string("worry"));
-    CHECK(find(text, "W orry") == string(" worry"));
-    CHECK(find(text, "v orry") == string("worry "));
-    CHECK(find(text, "v orry") == string(" worry"));
-    CHECK(find(text, "v orry") == string("worry "));
-    CHECK(find(text, "Happy") == string("Happy"));
-    CHECK(find(text, "H appy") == string("Happy"));
-    CHECK(find(text, "h appy") == string("Happy"));
-    CHECK(find(text, "h appi") == string("Happy"));
-    CHECK(find(text, "H appi") == string("Happy"));
-    CHECK(find(text, "h appi") == string("Happy"));
-    CHECK(find(text, "H appY") == string("Happy"));
-    CHECK(find(text, "h Appy") == string("Happy"));
-    CHECK(find(text, "h APpi") == string("Happy"));
-
-
-
-
-}
-
-
-
-
-
-
-
